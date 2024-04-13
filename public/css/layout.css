@@ -1,0 +1,32 @@
+.logo {
+    width: 50px;
+    height: auto;
+    object-fit: cover;
+}
+.nav-item a.active {
+    color: red !important;
+}
+.btn_loggin {
+    color: white;
+    padding: 5px 10px;
+    border: 2px solid red;
+    background-color: red;
+    border-radius: 3px;
+}
+.search_bar,
+.search_bar:focus {
+    padding: 0 10px;
+    width: 500px;
+    border-radius: 5px;
+    border: 1px solid rgb(173, 173, 173);
+    outline: none;
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(247, 247, 247);
+}

@@ -1,0 +1,70 @@
+.container_cupons {
+    width: 100%;
+    height: 60px;
+    gap: 20px;
+    background-color: #50a773;
+}
+.container_cupons_open {
+    height: 100%;
+    padding: 20px 0;
+    background-color: #fff;
+}
+.title {
+    font-size: 18px;
+}
+.cupom {
+    width: 100%;
+    max-width: 360px;
+    height: 300px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px -11px rgba(0, 0, 0, 0.75);
+}
+.btn_primary {
+    width: 90%;
+    padding: 7px 10px;
+    color: red;
+    border: 1px solid red;
+    border-radius: 3px;
+    background-color: transparent;
+}
+.image_svg {
+    position: absolute;
+    z-index: 10;
+    top: 150px;
+    left: 80px;
+    width: 500px;
+    height: auto;
+}
+.buble {
+    top: -200px;
+    left: -200px;
+    position: absolute;
+    width: 1300px;
+    height: 1500px;
+    border-radius: 100%;
+    background-color: rgb(255, 218, 218);
+}
+.container_main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.container_box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container_box_create_user {
+    position: absolute;
+    margin-left: 400px;
+    width: 550px;
+    height: 450px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05), 0 4px 16px rgba(0, 0, 0, 0.06);
+}
