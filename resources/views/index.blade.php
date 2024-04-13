@@ -121,4 +121,18 @@
             @endforeach
         </div>
     </div>
+    <h1>Famosos do momento!</h1>
+    <div class="container_restaurants d-flex justify-content-center align-items-center">
+        @foreach ($restaurants as $restaurant)
+            <div class="restaurants d-flex justify-content-left align-items-center">
+                <img class="img" src={{ $restaurant->logo }} alt="">
+                <div class="info d-flex justify-content-center align-items-left flex-column">
+                    <p>{{ $restaurant->title }}</p>
+                    <p>{{ $restaurant->type }}</p>
+                    <p>{{ $restaurant->time }}</p>
+                </div>
+            </div>
+        @endforeach
+    </div>
+
 @endsection

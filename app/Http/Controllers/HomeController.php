@@ -3,10 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Restaurants;
 
-class CuponsController extends Controller
+class HomeController extends Controller
 {
     public function index() {
+        $cupons = $this->getCupons();
+        $restaurants = $this->getRestaurants();
+
+        return view('index', ['cupons' => $cupons, 'restaurants' => $restaurants]);
+    }
+
+    private function getCupons() {
         $cupons = [
             [
                 'title' => 'R$ 5 para restaurantes selecionados',
@@ -35,10 +43,11 @@ class CuponsController extends Controller
             ],
         ];
 
-        return view('index', ['cupons' => $cupons]);
+        return $cupons;
     }
 
-    public function create() {
-        return view ('user.create');
+    private function getRestaurants() {
+        $restaurants = Restaurants::all();
+        return $restaurants;
     }
 }

@@ -69,8 +69,31 @@
 <body>
     @yield('content')
     @if (!isset($hideFooter) || !$hideFooter)
-        <footer>
-            <p>NSHCODE &copy; 2024</p>
+        <footer class="d-flex justify-content-evenly align-items-center">
+            <div class="hr"></div>
+            <div class="hr_bot"></div>
+            <div>
+                <p class="title_social">Ifood</p>
+                <p>Site Institucional</p>
+                <p>Fale conosco</p>
+                <p>Carreiras</p>
+                <p>Entregadores</p>
+            </div>
+            <div>
+                <p class="title_social">Descubra</p>
+                <p>Cadastre seu Restaurante</p>
+                <p>Ifood Shop</p>
+                <p>Ifood Card</p>
+                <p>Blog Ifood Empresas</p>
+            </div>
+            <div>
+                <p class="title_social">Social</p>
+                <p>Facebook</p>
+                <p>Twitter</p>
+                <p>Instagram</p>
+                <p>Youtube</p>
+            </div>
+
         </footer>
     @endif
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>

@@ -68,3 +68,34 @@
     background-color: #fff;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05), 0 4px 16px rgba(0, 0, 0, 0.06);
 }
+.container_restaurants {
+    gap: 20px;
+    padding: 10px;
+    padding-bottom: 50px;
+}
+.restaurants {
+    background-color: #f2f2f2;
+    width: 300px;
+    height: 130px;
+    border-radius: 10px;
+    transition: all 0.4s;
+    cursor: pointer;
+    border: 2px solid rgb(223, 223, 223);
+}
+.restaurants:hover {
+    transform: scale(96%);
+    transition: all 0.4s;
+}
+.img {
+    margin-left: 5px;
+    width: 100px;
+    height: auto;
+    border-radius: 100%;
+}
+.info {
+    margin: 0 10px;
+}
+h1 {
+    font-size: 25px !important;
+    padding: 10px;
+}
