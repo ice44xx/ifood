@@ -121,4 +121,55 @@
             @endforeach
         </div>
     </div>
+    <div class="container_register_restaurant_main d-flex justify-content-center align-items-center">
+        <div class="container_register_restaurant">
+            <h1 class="p-0" style="color: red; text-align: center;">Cadastre seu Restaurante agora!</h1>
+            <p style="font-weight: 600; text-align: center;">E receba 30 dias de mensalidade grátis.</p>
+        </div>
+    </div>
+    @if ($search)
+        <h1>Buscando por: {{ $search }}</h1>
+    @else
+        <h1>Famosos do momento!</h1>
+    @endif
+    <div class="container_restaurants d-flex justify-content-center align-items-center">
+        @if (count($restaurants) === 0 && $search)
+            <p>Não encontramos nenhum restaurante</p>
+        @endif
+        @foreach ($restaurants as $restaurant)
+            <a href="/restaurantes/{{ $restaurant->id }}" style="text-decoration: none; color: black">
+                <div class="restaurants d-flex justify-content-left align-items-center">
+                    <img class="img" src={{ $restaurant->logo }} alt="">
+                    <div class="info d-flex justify-content-center align-items-left flex-column">
+                        <p>{{ $restaurant->title }}</p>
+                        <p>{{ $restaurant->type }}</p>
+                        <p>{{ $restaurant->time }}</p>
+                    </div>
+                </div>
+            </a>
+        @endforeach
+    </div>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img
+                    src="https://static.ifood-static.com.br/image/upload/t_high/discoveries/2201PromotionsCampanhasAtualizacaoCapastoprestaurantescomdescontoCapaPrincipal_0hgA.png?imwidth=1920">
+            </div>
+            <div class="swiper-slide"><img
+                    src="https://static.ifood-static.com.br/image/upload/t_high/discoveries/2812PromotionsCampanhasAtualizacaoCapasCapaPrincipalentregagratis_0tY7.png?imwidth=1920"
+                    alt=""></div>
+            <div class="swiper-slide"><img
+                    src="https://static.ifood-static.com.br/image/upload/t_high/discoveries/0503descontacocomatecupomprincipal2_uLE1.png?imwidth=1920"
+                    alt=""></div>
+            <div class="swiper-slide"><img
+                    src="https://static.ifood-static.com.br/image/upload/t_high/discoveries/Banner_Clubeativo_BBB.png?imwidth=1920"
+                    alt=""></div>
+        </div>
+        <div class="swiper-button-next" style="color: white"></div>
+        <div class="swiper-button-prev" style="color: white"></div>
+    </div>
+    <img id="object" src="/img/pizza.png"
+        style="z-index: 10; width: 120px; height: 120px; cursor: pointer; position: absolute; top: 200px; right: 150px;"
+        alt="">
+
+
 @endsection

@@ -4,5 +4,6 @@
 
 @section('content')
 
+    <p>teste</p>
 
 @endsection
