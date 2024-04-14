@@ -339,7 +339,7 @@
         <div class="container_box">
             <div id="user_info"
                 class="container_box_create_user d-flex justify-content-center align-items-center flex-column">
-                <form action="/create" method="POST" class="form d-flex flex-column w-100">
+                <form action={{ route('register.store') }} method="POST" class="form d-flex flex-column w-100">
                     @csrf
                     <input type="text" name="fullName" placeholder="Nome Completo">
                     <input type="email" name="email" placeholder="Email">

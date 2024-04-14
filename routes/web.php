@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,16 +19,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//index
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/user/register', [HomeController::class, 'createUser']);
+//busca
+Route::get('/search', [SearchController::class, 'index'])->name('search.show');
 
-Route::get('/restaurantes/{id}', [HomeController::class, 'show']);
+//registro
+Route::get('/register', [RegisterController::class, 'index'])->name('register.index');
+Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
-Route::get('/restaurantes', function () {
-    return view('pages/restaurantes');
-});
+//login
+Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+Route::post('/login', [LoginController::class, 'store'])->name('login.store');
+Route::get('/logout', [LoginController::class, 'destroy'])->name('login.destroy');
 
-Route::post('/create', [UserController::class, 'store']);
+//Restaurantes
+Route::get('/restaurantes', [RestaurantController::class, 'index']);
+Route::get('/restaurantes/{id}', [RestaurantController::class, 'show'])->name('restaurant.show');
+
 
 
