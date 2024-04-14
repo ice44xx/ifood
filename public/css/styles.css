@@ -1,3 +1,4 @@
+/*Home - container cupons*/
 .container_cupons {
     width: 100%;
     height: 60px;
@@ -5,6 +6,8 @@
     background-color: #50a773;
 }
 .container_cupons_open {
+    position: relative;
+    z-index: 20;
     height: 100%;
     padding: 20px 0;
     background-color: #fff;
@@ -27,23 +30,6 @@
     border: 1px solid red;
     border-radius: 3px;
     background-color: transparent;
-}
-.image_svg {
-    position: absolute;
-    z-index: 10;
-    top: 150px;
-    left: 80px;
-    width: 500px;
-    height: auto;
-}
-.buble {
-    top: -200px;
-    left: -200px;
-    position: absolute;
-    width: 1300px;
-    height: 1500px;
-    border-radius: 100%;
-    background-color: rgb(255, 218, 218);
 }
 .container_main {
     position: relative;
@@ -101,7 +87,23 @@ h1 {
 }
 
 /*Register*/
-
+.image_svg {
+    position: absolute;
+    z-index: 10;
+    top: 150px;
+    left: 80px;
+    width: 500px;
+    height: auto;
+}
+.buble {
+    top: -200px;
+    left: -200px;
+    position: absolute;
+    width: 1300px;
+    height: 1500px;
+    border-radius: 100%;
+    background-color: rgb(255, 218, 218);
+}
 .container_register_restaurant_main {
     width: 100%;
     height: 400px;
@@ -118,6 +120,7 @@ h1 {
     background-color: #f2f2f2;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05), 0 4px 16px rgba(0, 0, 0, 0.06);
 }
+
 .form {
     max-width: 400px;
     margin: 0 auto;
@@ -136,12 +139,15 @@ h1 {
     border: none;
     cursor: pointer;
 }
+
+/* CAROUSEL */
 .swiper {
     width: 100%;
     height: 100%;
 }
 
 .swiper-slide {
+    padding: 0 20px;
     text-align: center;
     font-size: 18px;
     background: #fff;
@@ -151,8 +157,17 @@ h1 {
 }
 
 .swiper-slide img {
+    border-radius: 10px;
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* PROFILE USER */
+.profile {
+    width: 60px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 100%;
 }

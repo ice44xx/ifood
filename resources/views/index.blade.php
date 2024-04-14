@@ -127,15 +127,8 @@
             <p style="font-weight: 600; text-align: center;">E receba 30 dias de mensalidade grátis.</p>
         </div>
     </div>
-    @if ($search)
-        <h1>Buscando por: {{ $search }}</h1>
-    @else
-        <h1>Famosos do momento!</h1>
-    @endif
+    <h1>Famosos do momento!</h1>
     <div class="container_restaurants d-flex justify-content-center align-items-center">
-        @if (count($restaurants) === 0 && $search)
-            <p>Não encontramos nenhum restaurante</p>
-        @endif
         @foreach ($restaurants as $restaurant)
             <a href="/restaurantes/{{ $restaurant->id }}" style="text-decoration: none; color: black">
                 <div class="restaurants d-flex justify-content-left align-items-center">

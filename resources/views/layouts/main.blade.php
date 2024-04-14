@@ -26,7 +26,7 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <img src="/img/logo.png" class="logo m-3">
+                <a href="/"><img src="/img/logo.png" class="logo m-3"></a>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -57,15 +57,25 @@
                                 href="/shoppings">Shoppings</a>
                         </li>
                     </ul>
-                    <form action="/" method="GET" class="d-flex gap-3" role="search" style="width: 800px;">
+                    <form action="{{ route('search.show') }}" method="GET" class="d-flex gap-3" role="search"
+                        style="width: 800px;">
                         <input class="search_bar" type="search" name="search" placeholder="Busque pelo item aqui..."
                             aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Buscar</button>
                     </form>
-                    <div class="d-flex gap-3 justify-content-center align-items-center" style="width: 200px">
-                        <a href="/user/register" style="text-decoration: none; color: black">Criar Conta</a>
-                        <a href="" class="btn_loggin" style="text-decoration: none">Entrar</a>
-                    </div>
+                    @if (auth()->check())
+                        <div class="d-flex gap-3 justify-content-center align-items-center" style="width: 300px">
+                            <p class="p-0 m-0">{{ auth()->user()->fullName }}</p>
+                            <img class="profile" src={{ auth()->user()->profile }} alt={{ auth()->user()->fullName }}>
+                            <a href={{ route('login.destroy') }} class="btn_loggin"
+                                style="text-decoration: none">Sair</a>
+                        </div>
+                    @else
+                        <div class="d-flex gap-3 justify-content-center align-items-center" style="width: 200px">
+                            <a href="/register" style="text-decoration: none; color: black">Criar Conta</a>
+                            <a href="/login" class="btn_loggin" style="text-decoration: none">Entrar</a>
+                        </div>
+                    @endif
                 </div>
             </div>
         </nav>
