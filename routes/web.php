@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\CuponsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,10 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index' ]);
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/user/create', [CuponsController::class, 'create' ]);
+Route::get('/user/register', [HomeController::class, 'createUser']);
+
+Route::get('/restaurantes/{id}', [HomeController::class, 'show']);
 
 Route::get('/restaurantes', function () {
     return view('pages/restaurantes');
 });
+
+Route::post('/create', [UserController::class, 'store']);
+
+

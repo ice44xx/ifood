@@ -8,10 +8,21 @@ use App\Models\Restaurants;
 class HomeController extends Controller
 {
     public function index() {
-        $cupons = $this->getCupons();
-        $restaurants = $this->getRestaurants();
+        $search = request('search');
+        if($search) {
+            $restaurants = Restaurants::where('title', 'like', '%'.$search.'%')->get();
+        } else {
+            $restaurants = Restaurants::all();
+        }
 
-        return view('index', ['cupons' => $cupons, 'restaurants' => $restaurants]);
+        $cupons = $this->getCupons();
+
+        return view('index', ['cupons' => $cupons, 'restaurants' => $restaurants, 'search' => $search]);
+    }
+
+
+    public function createUser() {
+        return view('user.register');
     }
 
     private function getCupons() {
@@ -42,12 +53,12 @@ class HomeController extends Controller
                 'expiration' => '20/04/2024',
             ],
         ];
-
         return $cupons;
     }
 
-    private function getRestaurants() {
-        $restaurants = Restaurants::all();
-        return $restaurants;
+    public function show($id) {
+        $restaurantName = Restaurants::findOrFail($id);
+
+        return view('pages.info', ['restaurant' => $restaurantName]);
     }
 }
